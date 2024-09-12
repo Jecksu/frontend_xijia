@@ -6,9 +6,9 @@ import { CSSProperties } from 'react';
 
 //fake users
 const users = [
-  new user( 'Alice', require('../assets/clown_kid.jpg'), "female", "I am Alice", "323sef@gmail.com", new Date(), new Date(), []),
-  new user( 'Bob', require('../assets/clown_kid.jpg'), "male", "I am Bob", "323sef@gmail.com", new Date(), new Date(), []),
-  new user( 'Charlie', require('../assets/clown_kid.jpg'), "male", "I am Charlie", "323sef@gmail.com", new Date(), new Date(), []),
+  new user( 'Alice', '../alice.jpeg', "female", "I am Alice", "323sef@gmail.com", new Date(), new Date(), []),
+  new user( 'Bob', './bob.jpeg', "male", "I am Bob", "323sef@gmail.com", new Date(), new Date(), []),
+  new user( 'Henry', './henry.jpeg', "male", "I am Henry", "323sef@gmail.com", new Date(), new Date(), []),
 ];
 const currentUser = new user( 'Alice', require('../assets/clown_kid.jpg'), "323sef@gmail.com", "female", "I am Alice", new Date(), new Date(), []);
 

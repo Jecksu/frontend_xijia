@@ -2,7 +2,6 @@
 
 import React, { CSSProperties, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import user from '../utils/user';
 
 const styles: { [key: string]: CSSProperties } = {
     menu: {
@@ -15,12 +14,12 @@ const styles: { [key: string]: CSSProperties } = {
         border: '1px solid #ccc',
         borderRadius: '5px',
         zIndex: 9999,
-        padding: '5px',
+        padding: '0 5px 5px 5px',
         boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
     },
     userinfo: {
         padding: '4px',
-        margin: '4px 4px 8px 4px',
+        margin: '0 4px',
         border: '1px solid transparent',
         borderRadius: '4px',
         textAlign: 'center',
@@ -31,7 +30,14 @@ const styles: { [key: string]: CSSProperties } = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        order: -1,
+    },
+    menu_buttons: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'stretch',
+        backgroundColor: 'white',
+        width: '100%',
+        padding: '5px 0',
     },
     menuItem: {
         padding: '8px 12px',
@@ -88,9 +94,12 @@ function Menu() {
             <div style={styles.userinfo}>
                 <p>{curuser.username}</p>
             </div>
+            <div  style={styles.menu_buttons}>
             <button onClick={handleUserDashboardClick} style={styles.menuItem}>profile</button>
             <button onClick={handleSettingClick} style={styles.menuItem}>setting</button>
             <button onClick={handleLogoutClick} style={styles.menuItem}>log out</button>
+            </div>
+            
         </div>
     );
 }

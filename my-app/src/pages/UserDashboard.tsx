@@ -68,11 +68,10 @@ const styles: { [key: string]: CSSProperties } = {
   userDetails: {
     position: 'relative',
     alignContent: 'center',
-    textAlign: 'left',
+    textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
     top: '-300px',
-    
   },
 
   userDetailsH2: {
@@ -84,7 +83,7 @@ const styles: { [key: string]: CSSProperties } = {
     margin: '5px 0 0 0',
     color: '#666',
     alignItems: 'center',
-    textAlign: 'left',
+    textAlign: 'center',
     fontSize: '16px',
   },
 

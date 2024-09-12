@@ -284,7 +284,7 @@ const UserDashboard = () => {
         </div>
 
         <div className="contribution-chart" style={styles.contributionChart}>
-          <h3>Daily Contribution</h3>
+          <h3>Performance day</h3>
           <div >
             <Calendar />
           </div>

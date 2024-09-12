@@ -10,22 +10,22 @@ const styles: { [key: string]: CSSProperties } = {
         alignItems: 'stretch',
         position: 'absolute',
         backgroundColor: 'white',
-        width: '150px',
+        width: '120px',
         border: '1px solid #ccc',
         borderRadius: '5px',
         zIndex: 9999,
-        padding: '0 5px 5px 5px',
+        padding: '0px',
+        overflow: 'hidden',
         boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
     },
     userinfo: {
-        padding: '4px',
-        margin: '0 4px',
+        margin: '0',
         border: '1px solid transparent',
-        borderRadius: '4px',
+        borderRadius: '0',
         textAlign: 'center',
         color: '#333',
         backgroundColor: '#f0f0f0',
-        fontSize: '14px',
+        fontSize: '20px',
         fontWeight: 'bold',
         display: 'flex',
         justifyContent: 'center',
@@ -49,7 +49,6 @@ const styles: { [key: string]: CSSProperties } = {
         fontWeight: 'normal',
         cursor: 'pointer',
         textAlign: 'left',
-       
         marginLeft: '20px',
     },
     menuItemHover: {
@@ -90,7 +89,6 @@ function Menu() {
 
     return (
         <div style={styles.menu}>
-            <h1>Menu</h1>
             <div style={styles.userinfo}>
                 <p>{curuser.username}</p>
             </div>

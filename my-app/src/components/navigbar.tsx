@@ -47,9 +47,8 @@ const styles: { [key: string]: CSSProperties } = {
 
   menuContainer: {
     position: 'relative',
-    left: '-150px', // Adjust this value to position the menu to the left of the avatar
+    left: '-80px', // Adjust this value to position the menu to the left of the avatar
     top: '5px', // Adjust this value to position the menu below the avatar
-    
     zIndex: 1000,
   },
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import { CSSProperties } from 'react';
+import user from '../utils/user';
 
 const styles: { [key: string]: CSSProperties } = {
 
@@ -99,12 +100,15 @@ const mergedStyles = { ...styles, ...mediaStyles };
 function Login(props: {onRegister: () => void}) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
   const navigate = useNavigate(); 
 
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // navigate to profiles page when login successfully
-    navigate('/community');
+    //todo verify username and password
+    const newUser = new user(username,require('../assets/clown_kid.jpg'),"male","I am {username}","clown@gmail.com",new Date(),new Date(),[]);
+    navigate('/community',{ state: { curUser: newUser } });
   };
 
   return (

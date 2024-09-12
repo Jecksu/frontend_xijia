@@ -7,28 +7,31 @@ const styles: { [key: string]: CSSProperties } = {
     menu: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'stretch',
         position: 'absolute',
         backgroundColor: 'white',
-        width: '200px',
-        height: '200px',
-        border: '2px solid #ccc',
+        width: '180px',
+        border: '1px solid #ccc',
         borderRadius: '5px',
-        zIndex: 9999, // Added to ensure it's displayed above all other elements
+        zIndex: 9999,
+        padding: '5px',
+        boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
     },
     menuItem: {
-        margin: '0px',
-        padding: '10px',
-        border: '1px solid transparent',
-        borderRadius: '5px',
-        width: '200px', // Changed to match the menu width
-        backgroundColor: 'white',
-        color: 'black',
-        fontSize: '16px',
-        fontWeight: 'bold',
+        padding: '8px 12px',
+        border: 'none',
+        borderRadius: '3px',
+        backgroundColor: 'transparent',
+        color: '#555',
+        fontSize: '20px',
+        fontWeight: 'normal',
         cursor: 'pointer',
-        boxSizing: 'border-box', // Added to ensure padding is included in width
-        zIndex: 10000, // Added to ensure it's displayed above the menu container
+        textAlign: 'left',
+        transition: 'background-color 0.2s',
+        marginLeft: '20px',
+    },
+    menuItemHover: {
+        backgroundColor: '#f5f5f5',
     }
 }
 
@@ -44,7 +47,7 @@ function Menu() {
     if (!curuser) {
         return (
             <div style={styles.menu}>
-                <button onClick={handleLoginClick} style={styles.menuItem}>登陆</button>
+                <button onClick={handleLoginClick} style={styles.menuItem}>login in</button>
             </div>
         );
     }
@@ -65,9 +68,9 @@ function Menu() {
     return (
         <div style={styles.menu}>
             <h1>Menu</h1>
-            <button onClick={handleUserDashboardClick} style={styles.menuItem}>个人主页</button>
-            <button onClick={handleSettingClick} style={styles.menuItem}>设置</button>
-            <button onClick={handleLogoutClick} style={styles.menuItem}>登出</button>
+            <button onClick={handleUserDashboardClick} style={styles.menuItem}>profile</button>
+            <button onClick={handleSettingClick} style={styles.menuItem}>setting</button>
+            <button onClick={handleLogoutClick} style={styles.menuItem}>log out</button>
         </div>
     );
 }

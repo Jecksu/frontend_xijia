@@ -1,6 +1,6 @@
 
 
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Menu from './menu';
 
@@ -81,10 +81,28 @@ function Navigbar() {
   };
 
   const [menuVisible, setMenuVisible] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  
   const handleAvatarClick = () => {
     // inject the menu component
     setMenuVisible(!menuVisible);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuVisible(false);
+      }
+    };
+
+    if (menuVisible) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuVisible]);
 
   return (
     <nav style={styles.navbar} className="navigatebar">
@@ -109,8 +127,15 @@ function Navigbar() {
               handleAvatarClick()
             }}
           />
-            {menuVisible && <div style={styles.menuContainer} className='menu-container'> <Menu /></div>}
-          
+            {menuVisible && (
+              <div 
+              ref={menuRef}
+                style={styles.menuContainer} 
+                className='menu-container'
+              > 
+                <Menu />
+              </div>
+            )}
         </div>
       </div>
     </nav>
